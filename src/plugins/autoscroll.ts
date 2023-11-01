@@ -2,22 +2,22 @@ import { EmblaCarouselType } from 'embla-carousel';
 import { OptionsHandlerType } from 'embla-carousel/components/OptionsHandler';
 
 import {
-  AutoplayOptions,
-  AutoplayPluginType,
-  AutoplayPluginOptions,
-  AutoplayPluginFunction,
-} from './autoplay.types';
+  AutoscrollOptions,
+  AutoscrollPluginType,
+  AutoscrollPluginOptions,
+  AutoscrollPluginFunction,
+} from './autoscroll.types';
 
 declare module 'embla-carousel/components/Plugins' {
   interface EmblaPluginsType {
-    autoplay?: AutoplayPluginType;
+    autoscroll?: AutoscrollPluginType;
   }
 }
 
-const AutoplayPlugin: AutoplayPluginFunction = (
-  userOptions: AutoplayPluginOptions = {}
-): AutoplayPluginType => {
-  let options: AutoplayPluginOptions;
+const AutoscrollPlugin: AutoscrollPluginFunction = (
+  userOptions: AutoscrollPluginOptions = {}
+): AutoscrollPluginType => {
+  let options: AutoscrollPluginOptions;
   let emblaApi: EmblaCarouselType;
   let interaction: () => void;
   let timer = 0;
@@ -31,7 +31,7 @@ const AutoplayPlugin: AutoplayPluginFunction = (
 
     const { mergeOptions, optionsAtMedia } = optionsHandler;
 
-    const defaultOptions: Required<AutoplayOptions> = {
+    const defaultOptions: Required<AutoscrollOptions> = {
       active: true,
       breakpoints: {},
       delay: 4000,
@@ -44,7 +44,7 @@ const AutoplayPlugin: AutoplayPluginFunction = (
       rootNode: null,
     };
 
-    const base = mergeOptions(defaultOptions, AutoplayPlugin.globalOptions);
+    const base = mergeOptions(defaultOptions, AutoscrollPlugin.globalOptions);
     options = optionsAtMedia(mergeOptions(base, userOptions));
 
     jump = options.jump ?? false;
@@ -118,8 +118,8 @@ const AutoplayPlugin: AutoplayPluginFunction = (
     play();
   }
 
-  const self: AutoplayPluginType = {
-    name: 'autoplay',
+  const self: AutoscrollPluginType = {
+    name: 'autoscroll',
     options: userOptions,
     init,
     destroy,
@@ -130,6 +130,6 @@ const AutoplayPlugin: AutoplayPluginFunction = (
   return self;
 };
 
-AutoplayPlugin.globalOptions = <AutoplayOptions | undefined>undefined;
+AutoscrollPlugin.globalOptions = <AutoscrollOptions | undefined>undefined;
 
-export default AutoplayPlugin;
+export default AutoscrollPlugin;

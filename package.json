@@ -1,14 +1,14 @@
 {
-  "name": "embla-carousel-autoplay",
+  "name": "embla-carousel-autoscroll",
   "version": "8.0.0-rc14",
   "author": "Nikolas Schröter",
-  "description": "An extended autoplay plugin for Embla Carousel",
+  "description": "An extended autoscroll plugin for Embla Carousel",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nwidynski/embla-carousel-autoplay"
+    "url": "git+https://github.com/nwidynski/embla-carousel-autoscroll"
   },
   "bugs": {
-    "url": "https://github.com/nwidynski/embla-carousel-autoplay/issues"
+    "url": "https://github.com/nwidynski/embla-carousel-autoscroll/issues"
   },
   "homepage": "https://www.embla-carousel.com",
   "license": "MIT",
@@ -25,9 +25,9 @@
     "vue",
     "svelte"
   ],
-  "main": "dist/embla-carousel-autoplays.umd.js",
-  "unpkg": "dist/embla-carousel-autoplay.umd.js",
-  "module": "dist/embla-carousel-autoplay.esm.js",
+  "main": "dist/embla-carousel-autoscroll.umd.js",
+  "unpkg": "dist/embla-carousel-autoscroll.umd.js",
+  "module": "dist/embla-carousel-autoscroll.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [

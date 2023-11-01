@@ -1,7 +1,7 @@
 import { CreatePluginType } from 'embla-carousel/components/Plugins';
 import { CreateOptionsType } from 'embla-carousel/components/Options';
 
-export type AutoplayOptions = CreateOptionsType<{
+export type AutoscrollOptions = CreateOptionsType<{
   delay?: number;
   jump?: boolean;
   playOnInit?: boolean;
@@ -12,18 +12,18 @@ export type AutoplayOptions = CreateOptionsType<{
   rootNode?: ((emblaRoot: HTMLElement) => HTMLElement | null) | null;
 }>;
 
-export interface AutoplayPluginFunction {
-  (userOptions?: AutoplayPluginOptions): AutoplayPluginType;
-  globalOptions?: AutoplayPluginOptions | undefined;
+export interface AutoscrollPluginFunction {
+  (userOptions?: AutoscrollPluginOptions): AutoscrollPluginType;
+  globalOptions?: AutoscrollPluginOptions | undefined;
 }
 
-export type AutoplayPluginType = CreatePluginType<
+export type AutoscrollPluginType = CreatePluginType<
   {
     play: (jump?: boolean) => void;
     stop: () => void;
     reset: () => void;
   },
-  AutoplayOptions
+  AutoscrollOptions
 >;
 
-export type AutoplayPluginOptions = AutoplayPluginType['options'];
+export type AutoscrollPluginOptions = AutoscrollPluginType['options'];

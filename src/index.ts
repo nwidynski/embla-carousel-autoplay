@@ -1,6 +1,6 @@
 export {
-  AutoplayPluginType,
-  AutoplayPluginOptions,
-} from './plugins/autoplay.types';
+  AutoscrollPluginType,
+  AutoscrollPluginOptions,
+} from './plugins/autoscroll.types';
 
-export { default } from './plugins/autoplay';
+export { default } from './plugins/autoscroll';
